@@ -4,15 +4,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-import javax.swing.JTextPane;
+import javax.swing.JTextField;
+import javax.swing.JButton;
 
-public class Football {
+public class AddMatch {
 
 	private JFrame frame;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
 
 	/**
 	 * Launch the application.
@@ -21,7 +27,7 @@ public class Football {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Football window = new Football();
+					AddMatch window = new AddMatch();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,26 +39,15 @@ public class Football {
 	/**
 	 * Create the application.
 	 */
-
-	public JFrame getFrame() {
-		return this.frame;
-	}
-
-	public Football() {
+	public AddMatch() {
 		initialize();
-
 		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setBounds(100, 100, 440, 255);
 		JPanel contentPane = new JPanel();
 		frame.setContentPane(contentPane);
 		contentPane.setLayout(null);
-
-		JTextPane textPane = new JTextPane();
-		textPane.setEditable(false);
-		textPane.setBounds(154, 235, 315, 98);
-		contentPane.add(textPane);
-
+		
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBackground(SystemColor.activeCaption);
 		menuBar.setBounds(0, 0, 434, 22);
@@ -118,12 +113,51 @@ public class Football {
 			}
 		});
 		mnAddData.add(mntmMatches_1);
+		JLabel lblLocalTeam = new JLabel("Local team");
+		lblLocalTeam.setBounds(10, 68, 101, 14);
+		frame.getContentPane().add(lblLocalTeam);
 
-		JTextPane textPane_1 = new JTextPane();
-		textPane_1.setEditable(false);
-		textPane_1.setBounds(0, 21, 434, 203);
-		contentPane.add(textPane_1);
+		JLabel lblVisitorTeam = new JLabel("Visitor team");
+		lblVisitorTeam.setBounds(10, 104, 78, 14);
+		frame.getContentPane().add(lblVisitorTeam);
 
+		textField = new JTextField();
+		textField.setBounds(98, 65, 92, 20);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+
+		textField_1 = new JTextField();
+		textField_1.setBounds(98, 101, 92, 20);
+		frame.getContentPane().add(textField_1);
+		textField_1.setColumns(10);
+
+		JLabel lblLocalGoals = new JLabel("Local goals");
+		lblLocalGoals.setBounds(220, 68, 78, 14);
+		frame.getContentPane().add(lblLocalGoals);
+
+		JLabel lblVisitorGoals = new JLabel("Visitor goals");
+		lblVisitorGoals.setBounds(220, 104, 78, 14);
+		frame.getContentPane().add(lblVisitorGoals);
+
+		textField_2 = new JTextField();
+		textField_2.setBounds(322, 65, 86, 20);
+		frame.getContentPane().add(textField_2);
+		textField_2.setColumns(10);
+
+		textField_3 = new JTextField();
+		textField_3.setBounds(322, 101, 86, 20);
+		frame.getContentPane().add(textField_3);
+		textField_3.setColumns(10);
+
+		JButton btnAddMatch = new JButton("Add match");
+		btnAddMatch.setBounds(176, 159, 107, 23);
+		frame.getContentPane().add(btnAddMatch);
+
+		
+	}
+
+	public JFrame getFrame() {
+		return this.frame;
 	}
 
 	/**
@@ -133,6 +167,9 @@ public class Football {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+
+		
 	}
 
 }
