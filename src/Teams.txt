@@ -1,0 +1,15 @@
+RealMadrid::Zizou
+Touring::Carlos
+Barcelona::Valverde
+Oiartzun::Ekaitz
+Usurbil::XabierLazkano
+RealSociedad::ImanolAlguacil
+Sevilla::Machin
+Levante::Sergio
+Getafe::Francisco
+Chelsea::Kepa
+Arsenal::Wenger
+ManchesterCity::Guardiola
+ManchesterUnited::Sheokgoe
+Liverpool::Klopp
+Tottenham::Pochetino

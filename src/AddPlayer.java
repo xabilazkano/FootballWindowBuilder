@@ -2,6 +2,9 @@ import java.awt.EventQueue;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,6 +17,8 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
+
+import java.io.BufferedWriter;
 
 public class AddPlayer {
 
@@ -79,9 +84,26 @@ public class AddPlayer {
 		textField_2.setColumns(10);
 
 		JButton btnNewButton = new JButton("Add player");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				File playersFile = new File("C:\\Users\\ik013043z1\\eclipse-workspace\\WindowBuilder\\src\\Players.txt");
+				try {
+					BufferedWriter writer = new BufferedWriter(new FileWriter(playersFile,true));
+					String player = "\n"+textField.getText()+"::"+textField_1.getText()+"::"+textField_2.getText();
+					writer.write(player);
+					writer.close();
+					Football show = new Football(1);
+					show.getFrame().setVisible(true);
+					frame.dispose();
+					
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
 		btnNewButton.setBounds(165, 201, 117, 23);
 		contentPane.add(btnNewButton);
-
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBackground(SystemColor.activeCaption);
 		menuBar.setBounds(0, 0, 434, 22);
@@ -91,12 +113,48 @@ public class AddPlayer {
 		menuBar.add(mnShowData);
 
 		JMenuItem mntmPlayers = new JMenuItem("Players");
+		mntmPlayers.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					Football show = new Football(1);
+					show.getFrame().setVisible(true);
+					frame.dispose();
+
+				} catch (Exception i) {
+					i.printStackTrace();
+				}
+			}
+		});
 		mnShowData.add(mntmPlayers);
 
 		JMenuItem mntmTeams = new JMenuItem("Teams");
+		mntmTeams.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					Football show = new Football(2);
+					show.getFrame().setVisible(true);
+					frame.dispose();
+
+				} catch (Exception i) {
+					i.printStackTrace();
+				}
+			}
+		});
 		mnShowData.add(mntmTeams);
 
 		JMenuItem mntmMatches = new JMenuItem("Matches");
+		mntmMatches.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					Football show = new Football(3);
+					show.getFrame().setVisible(true);
+					frame.dispose();
+
+				} catch (Exception i) {
+					i.printStackTrace();
+				}
+			}
+		});
 		mnShowData.add(mntmMatches);
 
 		JMenu mnAddData = new JMenu("Add data");
@@ -137,6 +195,7 @@ public class AddPlayer {
 		mntmMatches_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
+					
 					AddMatch match = new AddMatch();
 					match.getFrame().setVisible(true);
 					frame.dispose();

@@ -2,6 +2,10 @@ import java.awt.EventQueue;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -44,9 +48,6 @@ public class AddTeam {
 	
 	public AddTeam() {
 		initialize();
-	
-
-		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setBounds(100, 100, 440, 255);
 		JPanel contentPane = new JPanel();
@@ -65,8 +66,8 @@ public class AddTeam {
 		mntmPlayers.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					Football foot = new Football();
-					foot.getFrame().setVisible(true);
+					Football show = new Football(1);
+					show.getFrame().setVisible(true);
 					frame.dispose();
 
 				} catch (Exception i) {
@@ -80,8 +81,8 @@ public class AddTeam {
 		mntmTeams.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					Football foot = new Football();
-					foot.getFrame().setVisible(true);
+					Football show = new Football(2);
+					show.getFrame().setVisible(true);
 					frame.dispose();
 
 				} catch (Exception i) {
@@ -95,8 +96,8 @@ public class AddTeam {
 		mntmMatches.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					Football foot = new Football();
-					foot.getFrame().setVisible(true);
+					Football show = new Football(3);
+					show.getFrame().setVisible(true);
 					frame.dispose();
 
 				} catch (Exception i) {
@@ -174,6 +175,24 @@ public class AddTeam {
 		textField_1.setColumns(10);
 		
 		JButton btnAddTeam = new JButton("Add team");
+		btnAddTeam.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				File teamsFile = new File("C:\\Users\\ik013043z1\\eclipse-workspace\\WindowBuilder\\src\\Teams.txt");
+				try {
+					BufferedWriter writer = new BufferedWriter(new FileWriter(teamsFile,true));
+					String team = "\n"+textField.getText()+"::"+textField_1.getText();
+					writer.write(team);
+					writer.close();
+					Football show = new Football(2);
+					show.getFrame().setVisible(true);
+					frame.dispose();
+					
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
 		btnAddTeam.setBounds(164, 173, 89, 23);
 		contentPane.add(btnAddTeam);
 	}
