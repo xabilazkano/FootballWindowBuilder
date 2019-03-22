@@ -52,6 +52,7 @@ public class AddMatch {
 		frame.setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBackground(SystemColor.activeCaption);
 		menuBar.setBounds(0, 0, 434, 22);
@@ -136,7 +137,7 @@ public class AddMatch {
 				}
 			}
 		});
-		
+
 		mnAddData.add(mntmTeams_1);
 
 		JMenuItem mntmMatches_1 = new JMenuItem("Matches");
@@ -153,6 +154,56 @@ public class AddMatch {
 			}
 		});
 		mnAddData.add(mntmMatches_1);
+		
+		JMenu mnDeleteData = new JMenu("Delete data");
+		menuBar.add(mnDeleteData);
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("Delete player");
+		mntmNewMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					Delete del = new Delete(1);
+					del.getFrame().setVisible(true);
+					frame.dispose();
+
+				} catch (Exception i) {
+					i.printStackTrace();
+				}
+			}
+		});
+		mnDeleteData.add(mntmNewMenuItem);
+		
+		JMenuItem mntmDeleteTeam = new JMenuItem("Delete team");
+		mntmDeleteTeam.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					Delete del = new Delete(2);
+					del.getFrame().setVisible(true);
+					frame.dispose();
+
+				} catch (Exception i) {
+					i.printStackTrace();
+				}
+			}
+		});
+		mnDeleteData.add(mntmDeleteTeam);
+		
+		JMenuItem mntmDeleteMatch = new JMenuItem("Delete match");
+		mntmDeleteMatch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					Delete del = new Delete(3);
+					del.getFrame().setVisible(true);
+					frame.dispose();
+
+				} catch (Exception i) {
+					i.printStackTrace();
+				}
+			}
+		});
+		mnDeleteData.add(mntmDeleteMatch);
+		
+		
 		JLabel lblLocalTeam = new JLabel("Local team");
 		lblLocalTeam.setBounds(10, 68, 101, 14);
 		frame.getContentPane().add(lblLocalTeam);

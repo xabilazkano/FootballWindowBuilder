@@ -15,7 +15,6 @@ Lovren::28::Liverpool
 HarryKane::25::Tottenham
 Vinicius::18::RealMadrid
 UnaiMitxelena::21::Touring
-Iniesta::33::Barcelona
 AnderGonzalez::21::Oiartzun
 Lazkano::21::Usurbil
 Juanmi::27::RealSociedad
@@ -24,8 +23,3 @@ Sergio::30::Levante
 Edu::27::Getafe
 Hazard::26::Chelsea
 Lacazzette::29::Arsenal
-Sane::20::ManchesterCity
-Rashford::21::ManchesterUnited
-Salah::26::Liverpool
-DelleAlli::23::Tottenham
-aitor::29::FDCVDXS

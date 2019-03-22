@@ -104,6 +104,7 @@ public class AddPlayer {
 		});
 		btnNewButton.setBounds(165, 201, 117, 23);
 		contentPane.add(btnNewButton);
+
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBackground(SystemColor.activeCaption);
 		menuBar.setBounds(0, 0, 434, 22);
@@ -188,14 +189,13 @@ public class AddPlayer {
 				}
 			}
 		});
-		
+
 		mnAddData.add(mntmTeams_1);
 
 		JMenuItem mntmMatches_1 = new JMenuItem("Matches");
 		mntmMatches_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					
 					AddMatch match = new AddMatch();
 					match.getFrame().setVisible(true);
 					frame.dispose();
@@ -206,6 +206,56 @@ public class AddPlayer {
 			}
 		});
 		mnAddData.add(mntmMatches_1);
+		
+		JMenu mnDeleteData = new JMenu("Delete data");
+		menuBar.add(mnDeleteData);
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("Delete player");
+		mntmNewMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					Delete del = new Delete(1);
+					del.getFrame().setVisible(true);
+					frame.dispose();
+
+				} catch (Exception i) {
+					i.printStackTrace();
+				}
+			}
+		});
+		mnDeleteData.add(mntmNewMenuItem);
+		
+		JMenuItem mntmDeleteTeam = new JMenuItem("Delete team");
+		mntmDeleteTeam.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					Delete del = new Delete(2);
+					del.getFrame().setVisible(true);
+					frame.dispose();
+
+				} catch (Exception i) {
+					i.printStackTrace();
+				}
+			}
+		});
+		mnDeleteData.add(mntmDeleteTeam);
+		
+		JMenuItem mntmDeleteMatch = new JMenuItem("Delete match");
+		mntmDeleteMatch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					Delete del = new Delete(3);
+					del.getFrame().setVisible(true);
+					frame.dispose();
+
+				} catch (Exception i) {
+					i.printStackTrace();
+				}
+			}
+		});
+		mnDeleteData.add(mntmDeleteMatch);
+		
+		
 	}
 
 	/**

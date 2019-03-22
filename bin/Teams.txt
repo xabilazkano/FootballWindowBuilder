@@ -1,5 +1,4 @@
 RealMadrid::Zizou
-Touring::Carlos
 Barcelona::Valverde
 Oiartzun::Ekaitz
 Usurbil::XabierLazkano
