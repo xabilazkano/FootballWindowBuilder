@@ -86,16 +86,18 @@ public class AddPlayer {
 		JButton btnNewButton = new JButton("Add player");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				File playersFile = new File("C:\\Users\\ik013043z1\\eclipse-workspace\\WindowBuilder\\src\\Players.txt");
+				File playersFile = new File(
+						"C:\\Users\\ik013043z1\\eclipse-workspace\\WindowBuilder\\src\\Players.txt");
 				try {
-					BufferedWriter writer = new BufferedWriter(new FileWriter(playersFile,true));
-					String player = "\n"+textField.getText()+"::"+textField_1.getText()+"::"+textField_2.getText();
+					BufferedWriter writer = new BufferedWriter(new FileWriter(playersFile, true));
+					String player = textField.getText() + "::" + textField_1.getText() + "::" + textField_2.getText()
+							+ "\n";
 					writer.write(player);
 					writer.close();
 					Football show = new Football(1);
 					show.getFrame().setVisible(true);
 					frame.dispose();
-					
+
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -206,10 +208,10 @@ public class AddPlayer {
 			}
 		});
 		mnAddData.add(mntmMatches_1);
-		
+
 		JMenu mnDeleteData = new JMenu("Delete data");
 		menuBar.add(mnDeleteData);
-		
+
 		JMenuItem mntmNewMenuItem = new JMenuItem("Delete player");
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -224,7 +226,7 @@ public class AddPlayer {
 			}
 		});
 		mnDeleteData.add(mntmNewMenuItem);
-		
+
 		JMenuItem mntmDeleteTeam = new JMenuItem("Delete team");
 		mntmDeleteTeam.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -239,7 +241,7 @@ public class AddPlayer {
 			}
 		});
 		mnDeleteData.add(mntmDeleteTeam);
-		
+
 		JMenuItem mntmDeleteMatch = new JMenuItem("Delete match");
 		mntmDeleteMatch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -254,8 +256,7 @@ public class AddPlayer {
 			}
 		});
 		mnDeleteData.add(mntmDeleteMatch);
-		
-		
+
 	}
 
 	/**
@@ -263,6 +264,7 @@ public class AddPlayer {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setResizable(false);
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}

@@ -50,8 +50,6 @@ public class Delete {
 		JPanel contentPane = new JPanel();
 		frame.setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		
 
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBackground(SystemColor.activeCaption);
@@ -154,10 +152,10 @@ public class Delete {
 			}
 		});
 		mnAddData.add(mntmMatches_1);
-		
+
 		JMenu mnDeleteData = new JMenu("Delete data");
 		menuBar.add(mnDeleteData);
-		
+
 		JMenuItem mntmNewMenuItem = new JMenuItem("Delete player");
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -172,7 +170,7 @@ public class Delete {
 			}
 		});
 		mnDeleteData.add(mntmNewMenuItem);
-		
+
 		JMenuItem mntmDeleteTeam = new JMenuItem("Delete team");
 		mntmDeleteTeam.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -187,7 +185,7 @@ public class Delete {
 			}
 		});
 		mnDeleteData.add(mntmDeleteTeam);
-		
+
 		JMenuItem mntmDeleteMatch = new JMenuItem("Delete match");
 		mntmDeleteMatch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -202,14 +200,7 @@ public class Delete {
 			}
 		});
 		mnDeleteData.add(mntmDeleteMatch);
-		
-		
-		
-		
-		
-		
-		
-		
+
 	}
 
 	/**
@@ -217,16 +208,16 @@ public class Delete {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setResizable(false);
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-	
+
 	public Delete(int option) {
 		initialize();
 		JPanel contentPane = new JPanel();
 		frame.setContentPane(contentPane);
 		contentPane.setLayout(null);
-
 
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBackground(SystemColor.activeCaption);
@@ -329,10 +320,10 @@ public class Delete {
 			}
 		});
 		mnAddData.add(mntmMatches_1);
-		
+
 		JMenu mnDeleteData = new JMenu("Delete data");
 		menuBar.add(mnDeleteData);
-		
+
 		JMenuItem mntmNewMenuItem = new JMenuItem("Delete player");
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -347,7 +338,7 @@ public class Delete {
 			}
 		});
 		mnDeleteData.add(mntmNewMenuItem);
-		
+
 		JMenuItem mntmDeleteTeam = new JMenuItem("Delete team");
 		mntmDeleteTeam.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -362,7 +353,7 @@ public class Delete {
 			}
 		});
 		mnDeleteData.add(mntmDeleteTeam);
-		
+
 		JMenuItem mntmDeleteMatch = new JMenuItem("Delete match");
 		mntmDeleteMatch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -377,45 +368,44 @@ public class Delete {
 			}
 		});
 		mnDeleteData.add(mntmDeleteMatch);
-		
-		
-		
-		if (option==1) {
-			
+
+		if (option == 1) {
+
 			JLabel lblNameOfThe = new JLabel("Name of the player");
 			lblNameOfThe.setBounds(37, 92, 113, 14);
 			contentPane.add(lblNameOfThe);
-			
+
 			textField = new JTextField();
 			textField.setBounds(172, 89, 153, 20);
 			contentPane.add(textField);
 			textField.setColumns(10);
-			
+
 			JButton btnDelete = new JButton("Delete");
 			btnDelete.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					File playersFile = new File("C:\\Users\\ik013043z1\\eclipse-workspace\\WindowBuilder\\src\\Players.txt");
-					 File temp = new File("C:\\Users\\ik013043z1\\eclipse-workspace\\WindowBuilder\\src\\PlayersTemp.txt");
+					File playersFile = new File(
+							"C:\\Users\\ik013043z1\\eclipse-workspace\\WindowBuilder\\src\\Players.txt");
+					File temp = new File(
+							"C:\\Users\\ik013043z1\\eclipse-workspace\\WindowBuilder\\src\\PlayersTemp.txt");
 					try {
-						BufferedWriter writer = new BufferedWriter(new FileWriter(temp,true));
+						BufferedWriter writer = new BufferedWriter(new FileWriter(temp, true));
 						Scanner sc = new Scanner(playersFile);
 						while (sc.hasNext()) {
 							String player = sc.nextLine();
-							String[] players =player.split("::");
+							String[] players = player.split("::");
 							if (!players[0].equals(textField.getText())) {
-								writer.write(player+"\n");
+								writer.write(player + "\n");
 							}
 						}
 						writer.close();
 						sc.close();
 						playersFile.delete();
 						temp.renameTo(playersFile);
-			
-					
+
 						Football show = new Football(1);
 						show.getFrame().setVisible(true);
 						frame.dispose();
-						
+
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -424,44 +414,43 @@ public class Delete {
 			});
 			btnDelete.setBounds(168, 148, 89, 23);
 			contentPane.add(btnDelete);
-		}
-		else if (option==2) {
+		} else if (option == 2) {
 			JLabel lblNameOfThe_1 = new JLabel("Name of the team");
 			lblNameOfThe_1.setBounds(37, 92, 113, 14);
 			contentPane.add(lblNameOfThe_1);
-			
+
 			textField_1 = new JTextField();
 			textField_1.setBounds(181, 89, 177, 20);
 			contentPane.add(textField_1);
 			textField_1.setColumns(10);
-			
+
 			JButton btnDelete_1 = new JButton("Delete");
 			btnDelete_1.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					
-					File teamsFile = new File("C:\\Users\\ik013043z1\\eclipse-workspace\\WindowBuilder\\src\\Teams.txt");
-					 File temp = new File("C:\\Users\\ik013043z1\\eclipse-workspace\\WindowBuilder\\src\\Temp.txt");
+
+					File teamsFile = new File(
+							"C:\\Users\\ik013043z1\\eclipse-workspace\\WindowBuilder\\src\\Teams.txt");
+					File temp = new File("C:\\Users\\ik013043z1\\eclipse-workspace\\WindowBuilder\\src\\Temp.txt");
 					try {
-						BufferedWriter writer = new BufferedWriter(new FileWriter(temp,true));
+						BufferedWriter writer = new BufferedWriter(new FileWriter(temp, true));
 						Scanner sc = new Scanner(teamsFile);
 						while (sc.hasNext()) {
 							String team = sc.nextLine();
-							String[] teams =team.split("::");
+							String[] teams = team.split("::");
 							if (!teams[0].equals(textField_1.getText())) {
-								writer.write(team+"\n");
+								writer.write(team + "\n");
 							}
 						}
-						
+
 						writer.close();
 						sc.close();
 						teamsFile.delete();
 						temp.renameTo(teamsFile);
-			
-					
+
 						Football show = new Football(2);
 						show.getFrame().setVisible(true);
 						frame.dispose();
-						
+
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -470,65 +459,63 @@ public class Delete {
 			});
 			btnDelete_1.setBounds(149, 162, 89, 23);
 			contentPane.add(btnDelete_1);
-		}
-		else if (option==3) {
-			
+		} else if (option == 3) {
+
 			JLabel lblLocalTeam = new JLabel("Local Team");
 			lblLocalTeam.setBounds(43, 58, 108, 14);
 			contentPane.add(lblLocalTeam);
-			
+
 			textField_2 = new JTextField();
 			textField_2.setBounds(162, 55, 149, 20);
 			contentPane.add(textField_2);
 			textField_2.setColumns(10);
-			
+
 			JLabel lblVisitorTeam = new JLabel("Visitor Team");
 			lblVisitorTeam.setBounds(43, 99, 108, 14);
 			contentPane.add(lblVisitorTeam);
-			
+
 			textField_3 = new JTextField();
 			textField_3.setBounds(162, 96, 149, 20);
 			contentPane.add(textField_3);
 			textField_3.setColumns(10);
-			
-			
+
 			JButton btnDelete_2 = new JButton("Delete");
 			btnDelete_2.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					
-					File matchesFile = new File("C:\\Users\\ik013043z1\\eclipse-workspace\\WindowBuilder\\src\\ChampionsMatches.txt");
-					 File temp = new File("C:\\Users\\ik013043z1\\eclipse-workspace\\WindowBuilder\\src\\Temp.txt");
+
+					File matchesFile = new File(
+							"C:\\Users\\ik013043z1\\eclipse-workspace\\WindowBuilder\\src\\ChampionsMatches.txt");
+					File temp = new File("C:\\Users\\ik013043z1\\eclipse-workspace\\WindowBuilder\\src\\Temp.txt");
 					try {
-						BufferedWriter writer = new BufferedWriter(new FileWriter(temp,true));
+						BufferedWriter writer = new BufferedWriter(new FileWriter(temp, true));
 						Scanner sc = new Scanner(matchesFile);
 						while (sc.hasNext()) {
 							String match = sc.nextLine();
-							String[] teams =match.split("::");
+							String[] teams = match.split("::");
 							if (!teams[0].equals(textField_2.getText()) && !teams[1].equals(textField_3.getText())) {
-								writer.write(match+"\n");
+								writer.write(match + "\n");
 							}
 						}
-						
+
 						writer.close();
 						sc.close();
 						matchesFile.delete();
 						temp.renameTo(matchesFile);
-			
-					
+
 						Football show = new Football(3);
 						show.getFrame().setVisible(true);
 						frame.dispose();
-						
+
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-					
+
 				}
 			});
 			btnDelete_2.setBounds(164, 171, 89, 23);
 			contentPane.add(btnDelete_2);
-			
+
 		}
 	}
 

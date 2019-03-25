@@ -4,7 +4,6 @@ Oiartzun::Ekaitz
 Usurbil::XabierLazkano
 RealSociedad::ImanolAlguacil
 Sevilla::Machin
-Levante::Sergio
 Getafe::Francisco
 Chelsea::Kepa
 Arsenal::Wenger

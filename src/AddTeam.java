@@ -39,13 +39,15 @@ public class AddTeam {
 			}
 		});
 	}
+
 	public JFrame getFrame() {
 		return this.frame;
 	}
+
 	/**
 	 * Create the application.
 	 */
-	
+
 	public AddTeam() {
 		initialize();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -53,7 +55,6 @@ public class AddTeam {
 		JPanel contentPane = new JPanel();
 		frame.setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
 
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBackground(SystemColor.activeCaption);
@@ -156,10 +157,10 @@ public class AddTeam {
 			}
 		});
 		mnAddData.add(mntmMatches_1);
-		
+
 		JMenu mnDeleteData = new JMenu("Delete data");
 		menuBar.add(mnDeleteData);
-		
+
 		JMenuItem mntmNewMenuItem = new JMenuItem("Delete player");
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -174,7 +175,7 @@ public class AddTeam {
 			}
 		});
 		mnDeleteData.add(mntmNewMenuItem);
-		
+
 		JMenuItem mntmDeleteTeam = new JMenuItem("Delete team");
 		mntmDeleteTeam.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -189,7 +190,7 @@ public class AddTeam {
 			}
 		});
 		mnDeleteData.add(mntmDeleteTeam);
-		
+
 		JMenuItem mntmDeleteMatch = new JMenuItem("Delete match");
 		mntmDeleteMatch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -204,40 +205,38 @@ public class AddTeam {
 			}
 		});
 		mnDeleteData.add(mntmDeleteMatch);
-		
-		
-		
+
 		JLabel lblName = new JLabel("Name");
 		lblName.setBounds(52, 68, 80, 14);
 		contentPane.add(lblName);
-		
+
 		JLabel lblCoach = new JLabel("Coach");
 		lblCoach.setBounds(52, 120, 80, 14);
 		contentPane.add(lblCoach);
-		
+
 		textField = new JTextField();
 		textField.setBounds(142, 65, 137, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
-		
+
 		textField_1 = new JTextField();
 		textField_1.setBounds(142, 117, 137, 20);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
-		
+
 		JButton btnAddTeam = new JButton("Add team");
 		btnAddTeam.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				File teamsFile = new File("C:\\Users\\ik013043z1\\eclipse-workspace\\WindowBuilder\\src\\Teams.txt");
 				try {
-					BufferedWriter writer = new BufferedWriter(new FileWriter(teamsFile,true));
-					String team = "\n"+textField.getText()+"::"+textField_1.getText();
+					BufferedWriter writer = new BufferedWriter(new FileWriter(teamsFile, true));
+					String team = textField.getText() + "::" + textField_1.getText() + "\n";
 					writer.write(team);
 					writer.close();
 					Football show = new Football(2);
 					show.getFrame().setVisible(true);
 					frame.dispose();
-					
+
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -253,6 +252,7 @@ public class AddTeam {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setResizable(false);
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}

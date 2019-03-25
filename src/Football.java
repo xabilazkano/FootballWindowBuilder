@@ -54,7 +54,6 @@ public class Football {
 		frame.setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBackground(SystemColor.activeCaption);
 		menuBar.setBounds(0, 0, 434, 22);
@@ -156,10 +155,10 @@ public class Football {
 			}
 		});
 		mnAddData.add(mntmMatches_1);
-		
+
 		JMenu mnDeleteData = new JMenu("Delete data");
 		menuBar.add(mnDeleteData);
-		
+
 		JMenuItem mntmNewMenuItem = new JMenuItem("Delete player");
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -174,7 +173,7 @@ public class Football {
 			}
 		});
 		mnDeleteData.add(mntmNewMenuItem);
-		
+
 		JMenuItem mntmDeleteTeam = new JMenuItem("Delete team");
 		mntmDeleteTeam.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -189,7 +188,7 @@ public class Football {
 			}
 		});
 		mnDeleteData.add(mntmDeleteTeam);
-		
+
 		JMenuItem mntmDeleteMatch = new JMenuItem("Delete match");
 		mntmDeleteMatch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -204,18 +203,15 @@ public class Football {
 			}
 		});
 		mnDeleteData.add(mntmDeleteMatch);
-		
 
-	
 		JScrollPane scrollBar = new JScrollPane();
 		scrollBar.setBounds(0, 22, 434, 232);
-		
+
 		frame.getContentPane().add(scrollBar);
-		
-				JTextPane textPane_1 = new JTextPane();
-				scrollBar.setViewportView(textPane_1);
-				textPane_1.setEditable(false);
-		
+
+		JTextPane textPane_1 = new JTextPane();
+		scrollBar.setViewportView(textPane_1);
+		textPane_1.setEditable(false);
 
 		if (this.option == 1) {
 			File playersFile = new File("C:\\Users\\ik013043z1\\eclipse-workspace\\WindowBuilder\\src\\Players.txt");
@@ -223,9 +219,9 @@ public class Football {
 			while (!playersFileFound) {
 				try {
 					Scanner playersScanner = new Scanner(playersFile);
-					String player="";
+					String player = "";
 					while (playersScanner.hasNext()) {
-						 player = player +"\n"+ playersScanner.nextLine();
+						player = player + "\n" + playersScanner.nextLine();
 
 					}
 					textPane_1.setText(player);
@@ -235,16 +231,16 @@ public class Football {
 					System.err.println("The file which contains the players was not found, enter the correct name");
 				}
 			}
-			
+
 		} else if (this.option == 2) {
 			File teamsFile = new File("C:\\Users\\ik013043z1\\eclipse-workspace\\WindowBuilder\\src\\Teams.txt");
 			boolean teamsFileFound = false;
 			while (!teamsFileFound) {
 				try {
 					Scanner teamsScanner = new Scanner(teamsFile);
-					String team="";
+					String team = "";
 					while (teamsScanner.hasNext()) {
-						 team = team +"\n"+ teamsScanner.nextLine();
+						team = team + "\n" + teamsScanner.nextLine();
 
 					}
 					textPane_1.setText(team);
@@ -254,16 +250,17 @@ public class Football {
 					System.err.println("The file which contains the teams was not found, enter the correct name");
 				}
 			}
-			
+
 		} else if (this.option == 3) {
-			File matchesFile = new File("C:\\Users\\ik013043z1\\eclipse-workspace\\WindowBuilder\\src\\ChampionsMatches.txt");
+			File matchesFile = new File(
+					"C:\\Users\\ik013043z1\\eclipse-workspace\\WindowBuilder\\src\\ChampionsMatches.txt");
 			boolean matchesFileFound = false;
 			while (!matchesFileFound) {
 				try {
 					Scanner matchesScanner = new Scanner(matchesFile);
-					String match="";
+					String match = "";
 					while (matchesScanner.hasNext()) {
-						 match = match +"\n"+ matchesScanner.nextLine();
+						match = match + "\n" + matchesScanner.nextLine();
 
 					}
 					textPane_1.setText(match);
@@ -279,11 +276,10 @@ public class Football {
 
 	public Football() {
 		initialize();
-	
+
 		JPanel contentPane = new JPanel();
 		frame.setContentPane(contentPane);
 		contentPane.setLayout(null);
-
 
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBackground(SystemColor.activeCaption);
@@ -386,10 +382,10 @@ public class Football {
 			}
 		});
 		mnAddData.add(mntmMatches_1);
-		
+
 		JMenu mnDeleteData = new JMenu("Delete data");
 		menuBar.add(mnDeleteData);
-		
+
 		JMenuItem mntmNewMenuItem = new JMenuItem("Delete player");
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -404,7 +400,7 @@ public class Football {
 			}
 		});
 		mnDeleteData.add(mntmNewMenuItem);
-		
+
 		JMenuItem mntmDeleteTeam = new JMenuItem("Delete team");
 		mntmDeleteTeam.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -419,7 +415,7 @@ public class Football {
 			}
 		});
 		mnDeleteData.add(mntmDeleteTeam);
-		
+
 		JMenuItem mntmDeleteMatch = new JMenuItem("Delete match");
 		mntmDeleteMatch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -434,17 +430,15 @@ public class Football {
 			}
 		});
 		mnDeleteData.add(mntmDeleteMatch);
-		
-		
-		
+
 		JScrollPane scrollBar = new JScrollPane();
 		scrollBar.setBounds(0, 22, 434, 239);
-		
+
 		frame.getContentPane().add(scrollBar);
-		
-				JTextPane textPane_1 = new JTextPane();
-				scrollBar.setViewportView(textPane_1);
-				textPane_1.setEditable(false);
+
+		JTextPane textPane_1 = new JTextPane();
+		scrollBar.setViewportView(textPane_1);
+		textPane_1.setEditable(false);
 
 	}
 
@@ -453,6 +447,7 @@ public class Football {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setResizable(false);
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}

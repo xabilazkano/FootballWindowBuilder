@@ -246,7 +246,7 @@ public class AddMatch {
 				File matchesFile = new File("C:\\Users\\ik013043z1\\eclipse-workspace\\WindowBuilder\\src\\ChampionsMatches.txt");
 				try {
 					BufferedWriter writer = new BufferedWriter(new FileWriter(matchesFile,true));
-					String match = "\n"+textField.getText()+"::"+textField_1.getText()+"::"+textField_2.getText()+"::"+textField_3.getText();
+					String match = textField.getText()+"::"+textField_1.getText()+"::"+textField_2.getText()+"::"+textField_3.getText()+"\n";
 					writer.write(match);
 					writer.close();
 					Football show = new Football(3);
