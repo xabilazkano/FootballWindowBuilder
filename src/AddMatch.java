@@ -202,6 +202,53 @@ public class AddMatch {
 			}
 		});
 		mnDeleteData.add(mntmDeleteMatch);
+		JMenu mnModifyData = new JMenu("Modify data");
+		menuBar.add(mnModifyData);
+
+		JMenuItem mntmPlayers_2 = new JMenuItem("Players");
+		mntmPlayers_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					ModifyPlayer player = new ModifyPlayer();
+					player.getFrame().setVisible(true);
+					frame.dispose();
+
+				} catch (Exception i) {
+					i.printStackTrace();
+				}
+			}
+		});
+		mnModifyData.add(mntmPlayers_2);
+
+		JMenuItem mntmTeams_2 = new JMenuItem("Teams");
+		mntmTeams_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					ModifyTeam team = new ModifyTeam();
+					team.getFrame().setVisible(true);
+					frame.dispose();
+
+				} catch (Exception i) {
+					i.printStackTrace();
+				}
+			}
+		});
+		mnModifyData.add(mntmTeams_2);
+
+		JMenuItem mntmMatches_2 = new JMenuItem("Matches");
+		mntmMatches_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					ModifyFootballMatch match = new ModifyFootballMatch();
+					match.getFrame().setVisible(true);
+					frame.dispose();
+
+				} catch (Exception i) {
+					i.printStackTrace();
+				}
+			}
+		});
+		mnModifyData.add(mntmMatches_2);
 		
 		
 		JLabel lblLocalTeam = new JLabel("Local team");

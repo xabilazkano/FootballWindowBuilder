@@ -1,0 +1,15 @@
+RealMadrid::null
+Touring::null
+Barcelona::null
+Usurbil::null
+RealSociedad::null
+Sevilla::null
+Levante::null
+Getafe::null
+Chelsea::null
+Arsenal::null
+ManchesterCity::null
+ManchesterUnited::null
+Liverpool::null
+Tottenham::null
+Oiartzun::Urko
