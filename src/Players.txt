@@ -4,7 +4,6 @@ Enaut Fernandez::31::Oiartzun
 Mikel Perez::25::Usurbil
 Xabi Prieto::34::RealSociedad
 Ever Banega::29::Sevilla
-Morales::35::Levante
 Angel::23::Getafe
 Ngolo Kante::22::Chelsea
 Mesut Ozil::28::Arsenal
@@ -18,7 +17,6 @@ Ander Gonzalez::21::Oiartzun
 Xabi Lazkano::21::Usurbil
 Juanmi::27::RealSociedad
 Sarabia::20::Sevilla
-Edu::27::Getafe
 Hazard::26::Chelsea
 Lacazzette::29::Arsenal
-Morales::30::Levante
+Edu::30::Getafe

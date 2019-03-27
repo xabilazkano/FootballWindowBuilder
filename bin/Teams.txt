@@ -3,7 +3,6 @@ Barcelona::Valverde
 Oiartzun::Ekaitz
 Usurbil::XabierLazkano
 RealSociedad::ImanolAlguacil
-Sevilla::Machin
 Getafe::Francisco
 Chelsea::Kepa
 Arsenal::Wenger

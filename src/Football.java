@@ -14,6 +14,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
+import java.awt.event.MouseWheelListener;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Football {
 
@@ -532,6 +536,13 @@ public class Football {
 		frame.getContentPane().add(scrollBar);
 
 		JTextPane textPane_1 = new JTextPane();
+		textPane_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				textPane_1.setText("Writing here is forbidden");
+			}
+		});
+		
 		scrollBar.setViewportView(textPane_1);
 		textPane_1.setEditable(false);
 
